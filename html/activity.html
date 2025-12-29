@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activity Dashboard</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .tabs { margin: 20px 0; }
+    .tab-btn { padding: 10px 20px; margin-right: 10px; cursor: pointer; }
+    .tab-btn.active { background: #088178; color: white; border-radius: 5px; }
+    .tab-pane { display: none; margin-top: 20px; }
+    .tab-pane.active { display: block; }
+    .card { border: 2px solid #088178; padding: 15px; margin-bottom: 15px; border-radius: 8px; background: #f9f9f9; }
+    .stats { display: flex; gap: 20px; margin-bottom: 20px;  }
+    .stat-box { flex: 1; background: #fff; border: 1px solid #ddd; padding: 15px; border-radius: 8px; text-align: center; }
+    .stat-box h3 { margin: 0; color: #088178; background-color: #fff;}
+    p, span, h2, h3 { background: #f9f9f9; /* text background */ }
+
+  </style>
+</head>
+<body>
+  <section id="header">
+    <a href="#"><img src="../img/logo.png" class="logo" alt=""></a>
+    <div>
+      <ul id="navbar">
+        <li><a href="dash.html">Orders</a></li>
+        <li><a class="active" href="activity.html">Dashboard</a></li>
+        <li><a href="logout.php">Logout</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <h1 class="cart-title"><br>Activity Dashboard</h1>
+
+  <!-- Quick Stats -->
+  <div class="stats">
+    <div class="stat-box">
+      <h3 id="totalOrders">0</h3>
+      <p>Total Orders</p>
+    </div>
+    <div class="stat-box">
+      <h3 id="pendingOrders">0</h3>
+      <p>Pending</p>
+    </div>
+    <div class="stat-box">
+      <h3 id="doneOrders">0</h3>
+      <p>Done</p>
+    </div>
+    <div class="stat-box">
+      <h3 id="rejectedOrders">0</h3>
+      <p>Rejected</p>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab-btn active" onclick="showTab('recent')">Recent Activity</button>
+    <button class="tab-btn" onclick="showTab('users')">Users</button>
+    <button class="tab-btn" onclick="showTab('system')">System Logs</button>
+  </div>
+
+  <!-- Tab content -->
+  <div id="recent" class="tab-pane active"></div>
+  <div id="users" class="tab-pane"></div>
+  <div id="system" class="tab-pane"></div>
+
+  <script src="../js/activity.js"></script>
+</body>
+</html>

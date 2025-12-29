@@ -1,0 +1,469 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    /* Enhanced Color Palette */
+    --primary-color: #3b82f6;
+    --primary-hover: #2563eb;
+    --primary-light: #dbeafe;
+    --secondary-color: #f8fafc;
+    --accent-color: #8b5cf6;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --text-muted: #94a3b8;
+
+    /* Modern Backgrounds */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f1f5f9;
+    --bg-card: #ffffff;
+    --bg-overlay: rgba(15, 23, 42, 0.1);
+
+    /* Enhanced Shadows & Effects */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.15);
+
+    /* Borders & Radius */
+    --border-color: #e2e8f0;
+    --border-radius-sm: 6px;
+    --border-radius: 12px;
+    --border-radius-lg: 16px;
+    --border-radius-xl: 20px;
+
+    /* Status Colors */
+    --color-success: #10b981;
+    --color-success-light: #d1fae5;
+    --color-warning: #f59e0b;
+    --color-warning-light: #fef3c7;
+    --color-danger: #ef4444;
+    --color-danger-light: #fecaca;
+    --color-info: #3b82f6;
+    --color-info-light: #dbeafe;
+
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-normal: 250ms ease;
+    --transition-slow: 350ms ease;
+
+    /* Z-index layers */
+    --z-modal: 1050;
+}
+
+/* Reset & Base Styles */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 20px; 
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--text-primary);
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, #e0f2fe 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Container */
+.container {
+    display: grid;
+    grid-template-columns: 240px 1fr 280px; 
+    gap: 1.5rem;
+    min-height: 100vh;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Sidebar */
+aside {
+    background: var(--bg-card);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
+    height: fit-content;
+    position: sticky;
+    top: 1rem;
+    overflow: hidden;
+    padding: 0;
+}
+
+aside .top {
+    padding: 1.5rem 1rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+aside .logo {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    
+
+}
+
+aside .logo .img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: var(--border-radius-sm);
+    color: white;
+    font-size: 1.25rem;
+    margin-right: 0.2rem;
+    
+}
+
+aside .logo h2 {
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: var(--text-primary);
+    margin-right: 0.5rem;
+}
+
+aside .logo h2 .danger {
+    color: var(--color-danger);
+}
+
+aside .close {
+    display: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: color var(--transition-fast);
+}
+
+aside .close:hover {
+    color: var(--text-primary);
+}
+
+/* Sidebar Links (keeps your .sidebar-links from original file) */
+.sidebar-links,
+aside .sidebar {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.sidebar-links a,
+aside .sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    position: relative;
+    margin: 0.2rem 0.25rem;
+    border-radius: var(--border-radius-sm);
+    font-weight: 500;
+    font-size: 0.85rem;
+    background: transparent;
+}
+
+.sidebar-links a:hover,
+aside .sidebar a:hover {
+    background: var(--primary-light);
+    color: var(--primary-color);
+    transform: translateX(3px);
+}
+
+.sidebar-links a.active,
+aside .sidebar a.active {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    box-shadow: var(--shadow-glow);
+}
+
+.sidebar-links a span.material-icons-outlined,
+aside .sidebar a span.material-icons-outlined {
+    font-size: 1rem;
+}
+
+.sidebar-links a h3,
+aside .sidebar a h3 {
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* message count / badges */
+.sidebar-links .message-count,
+aside .sidebar .message-count {
+    background: var(--color-danger);
+    color: white;
+    padding: 1px 6px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    min-width: 18px;
+    text-align: center;
+    margin-left: auto;
+}
+
+/* Main Content */
+main {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+}
+
+/* Main Box (keeps your previous `main` card structure) */
+main .main-box {
+    background: var(--bg-card);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+main .main-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+}
+
+main .main-box .top {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+main .main-box .top h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+main .main-box .top h2::before {
+    content: '';
+    width: 3px;
+    height: 24px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 2px;
+}
+
+/* Insights / Cards */
+main .insights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+main .insights .student {
+    background: linear-gradient(135deg, var(--bg-card) 0%, #fafbff 100%);
+    padding: 0.85rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+main .insights .student::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2.5px;
+    background: linear-gradient(90deg, var(--color-success), #34d399);
+}
+
+main .insights .student:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+main .insights .student > span {
+    width: 28px;
+    height: 28px;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+main .insights .student .middle .left h3:first-child {
+    font-size: 0.8rem;
+    margin-bottom: 0.15rem;
+}
+
+main .insights .student .middle .left h1 {
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+}
+
+main .insights .student .middle .left h3 {
+    font-size: 0.7rem;
+    margin-bottom: 0.15rem;
+}
+
+main .insights .student .middle .left h3.alarm {
+    font-size: 0.65rem;
+    padding: 0.15rem 0.35rem;
+    margin-top: 0.35rem;
+}
+
+/* Log Box (keeps log styles from your original file) */
+.log-box {
+    background: transparent;
+    border-radius: var(--border-radius-sm);
+    padding: 0.5rem;
+}
+
+.log-box ul { list-style: none; }
+.log-box li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Buttons */
+.accept-btn, .reject-btn {
+    padding: 0.45rem 0.8rem;
+    border: none;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    color: #fff;
+    margin-top: 0.35rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+}
+.accept-btn {
+    background: linear-gradient(135deg, var(--color-success), #34d399);
+}
+.accept-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.reject-btn {
+    background: linear-gradient(135deg, var(--color-danger), #f97373);
+}
+.reject-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+/* Print Button */
+.print-button {
+    margin-top: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    background: var(--primary-light);
+    color: var(--primary-color);
+    border: 1px solid transparent;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+.print-button:hover { background: linear-gradient(90deg, var(--primary-light), var(--color-info-light)); }
+
+/* Right Panel */
+.right {
+    background: var(--bg-card);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    font-size: 0.85rem;
+    height: fit-content;
+}
+
+.right table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+.right table th, .right table td {
+    padding: 0.5rem 0.6rem;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+/* Icon alignment */
+.material-icons-outlined {
+    vertical-align: middle;
+    font-size: 1.1rem;
+    line-height: 1;
+    margin-right: 6px;
+    color: var(--text-secondary);
+}
+
+/* Small UI helpers */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* Cards, inputs and form elements */
+input, select, textarea, button {
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+}
+
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Responsive tweaks for compact layout */
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    aside, .right {
+        position: relative;
+        top: 0;
+    }
+
+    aside .close { display: block; } /* show close control on mobile if you wire JS */
+}
+
+/* Accessibility & focus */
+a:focus, button:focus, input:focus, select:focus, textarea:focus {
+    outline: 3px solid rgba(59,130,246,0.12);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(59,130,246,0.06);
+}
+
+/* Utilities (optional) */
+.text-muted { color: var(--text-muted); font-size: 0.85rem; }
+.small { font-size: 0.8rem; }
+.center { display:flex; align-items:center; justify-content:center; }
+

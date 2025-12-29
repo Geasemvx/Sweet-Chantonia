@@ -1,0 +1,482 @@
+#head {
+  position:sticky;
+  background-color: #fbe4e1;
+  font-family: sans-serif;
+  display: flex;
+  
+}
+.payment-card {
+  
+  background: #fbe4e1;
+  padding: 0px 400px;
+  border-radius: 8px;
+  text-align: center;
+  border: 4px solid #088178;
+  
+}
+.pay-title {
+  color: #088178;
+  
+}
+.info{
+  background-color: #fff;
+}
+.bank-info {
+  background: white;
+  background-color: #fff;
+  padding: 1px;
+  border-radius: 10px;
+  margin: 2px 0;
+  border-left: 5px solid #088178;
+}
+.price-text {
+  color: #088178;
+  
+}
+.summary{
+  padding: 0;
+}
+
+.back-link {
+  color: #222;
+  text-decoration: none;
+  font-size: 0.9rem;          /* slightly larger text */
+  display: inline-flex;       /* flex for icon + text */
+  align-items: center;
+  gap: 6px;                   /* space between icon and text */
+  padding: 6px 12px;          /* bigger clickable area */
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  cursor: pointer;            /* pointer cursor signals clickability */
+}
+
+.back-link::before {
+  content: "←";               /* simple arrow icon */
+  font-size: 1rem;
+}
+
+.back-link:hover {
+  color: #02A2F8;             /* highlight color */
+  background-color: #f0f8ff;  /* subtle background */
+  text-decoration:wavy; /* underline on hover */
+  transform: translateY(-2px);/* slight lift effect */
+}
+
+
+
+/* btn-5 */
+
+.btn-5 {
+  --primary: #02A2F8;
+  --neutral-1: #f7f8f7;
+  --neutral-2: #e7e7e7;
+  --radius: 32px;
+  scale: 0.5;
+  cursor: pointer;
+  border-radius: var(--radius);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position:relative;
+  top: -15px; /* negative moves it UP */ 
+  left: 190px;
+  transition: all 0.3s ease;
+  min-width: 160px;
+  padding: 0 20px;
+  height: 74px;
+  font-family: "Galano Grotesque", Poppins, Montserrat, sans-serif;
+  font-style: normal;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary);
+  background-color: #fff;
+}
+.btn-5:hover {
+  transform: scale(1.02);
+  color: var(--primary);
+  background-color: #fff;
+}
+.btn-5:active {
+  transform: scale(1);
+  color: var(--primary);
+  background-color: #fff;
+}
+.btn-5:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  background: #fff;
+  border: 2.5px solid transparent;
+  z-index: 0;
+  transition: all 0.4s ease;
+  color: var(--primary);
+  background-color: #fff;
+}
+.btn-5:hover::after {
+  transform: scale(1.05, 1.1);
+  color: var(--primary);
+  background-color: #fff;
+}
+.btn-5::before {
+  content: "";
+  inset: 7px 6px 6px 6px;
+  position: absolute;
+  border-radius: 30px;
+  filter: blur(0.5px);
+  z-index: 2;
+  color: var(--primary);
+  background-color: #fff;
+}
+.btn-5 .state p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  background-color: #fff;
+}
+.btn-5 .state .icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  transform: scale(1.25);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  background-color: #fff;
+}
+.btn-5 .state .icon svg {
+  overflow: visible;
+  color: var(--primary);
+  background-color: #fff;
+}
+
+/* Outline */
+.btn-5 .outline {
+  position: absolute;
+  border-radius: inherit;
+  overflow: hidden;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  inset: -2px -3.5px;
+  color: var(--primary);
+  background-color: #fff;
+}
+.btn-5 .outline::before {
+  content: "";
+  position: absolute;
+  color: var(--primary);
+  background-color: #fff;
+  inset: -100%;
+  background: conic-gradient(
+    from 180deg,
+    transparent 60%,
+    white 80%,
+    transparent 100%
+  );
+  animation: spin 2s linear infinite;
+  animation-play-state: paused;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    color: var(--primary);
+  background-color: #fff;
+  }
+  100% {
+    transform: rotate(360deg);
+    color: var(--primary);
+  background-color: #fff;
+  }
+}
+.btn-5:hover .outline {
+  opacity: 1;
+  color: var(--primary);
+  background-color: #fff;
+}
+.btn-5:hover .outline::before {
+  animation-play-state: running;
+  color: var(--primary);
+  background-color: #fff;
+}
+
+/* Letters */
+.btn-5 .state p span {
+  display: block;
+  opacity: 0;
+  color: var(--primary);
+  background-color: #fff;
+  animation: slideDown 0.8s ease forwards calc(var(--i) * 0.03s);
+}
+.btn-5:hover p span {
+  opacity: 1;
+  animation: wave 0.5s ease forwards calc(var(--i) * 0.02s);
+  color: var(--primary);
+  background-color: #fff;
+}
+.btn-5:focus p span {
+  opacity: 1;
+  animation: disapear 0.6s ease forwards calc(var(--i) * 0.03s);
+  color: var(--primary);
+  background-color: #fff;
+}
+@keyframes wave {
+  30% {
+    opacity: 1;
+    transform: translateY(4px) translateX(0) rotate(0);
+    color: var(--primary);
+  background-color: #fff;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-3px) translateX(0) rotate(0);
+    color: var(--primary);
+    color: var(--primary);
+  background-color: #fff;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) translateX(0) rotate(0);
+    color: var(--primary);
+  background-color: #fff;
+  }
+}
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) translateX(5px) rotate(-90deg);
+    color: var(--primary);
+    filter: blur(5px);
+    color: var(--primary);
+  background-color: #fff;
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(4px) translateX(0) rotate(0);
+    filter: blur(0);
+    color: var(--primary);
+  background-color: #fff;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-3px) translateX(0) rotate(0);
+    color: var(--primary);
+  background-color: #fff;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) translateX(0) rotate(0);
+    color: var(--primary);
+  background-color: #fff;
+  }
+}
+@keyframes disapear {
+  from {
+    opacity: 1;
+    color: var(--primary);
+  background-color: #fff;
+  }
+  to {
+    opacity: 0;
+    transform: translateX(5px) translateY(20px);
+    color: var(--primary);
+    filter: blur(5px);
+    color: var(--primary);
+  background-color: #fff;
+  }
+}
+
+/* Plane */
+.btn-5 .state--default .icon svg {
+  color: var(--primary);
+  background-color: #fff;
+  animation: land 0.6s ease forwards;
+}
+.btn-5:hover .state--default .icon {
+  transform: rotate(45deg) scale(1.25);
+  color: var(--primary);
+  background-color: #fff;
+}
+.btn-5:focus .state--default svg {
+  animation: takeOff 0.8s linear forwards;
+  color: var(--primary);
+  background-color: #fff;
+}
+.btn-5:focus .state--default .icon {
+  transform: rotate(0) scale(1.25);
+  color: var(--primary);
+  background-color: #fff;
+}
+.btn-5 .state--default{
+  color: var(--primary);
+  background-color: #fff;
+}
+@keyframes takeOff {
+  0% {
+    opacity: 1;
+    color: var(--primary);
+  background-color: #fff;
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(70px) rotate(45deg) scale(2);
+    color: var(--primary);
+  background-color: #fff;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(160px) rotate(45deg) scale(0);
+    color: var(--primary);
+  background-color: #fff;
+  }
+}
+@keyframes land {
+  0% {
+    transform: translateX(-60px) translateY(30px) rotate(-50deg) scale(2);
+    opacity: 0;
+    filter: blur(3px);
+    color: var(--primary);
+  background-color: #fff;
+  }
+  100% {
+    transform: translateX(0) translateY(0) rotate(0);
+    opacity: 1;
+    filter: blur(0);
+    color: var(--primary);
+  background-color: #fff;
+  }
+}
+
+/* Contrail */
+.btn-5 .state--default .icon:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  height: 2px;
+  width: 0;
+  left: -5px;
+  background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.5));
+  color: var(--primary);
+  background-color: #fff;
+}
+.btn-5:focus .state--default .icon:before {
+  animation: contrail 0.8s linear forwards;
+  color: var(--primary);
+  background-color: #fff;
+}
+@keyframes contrail {
+  0% {
+    width: 0;
+    opacity: 1;
+    color: var(--primary);
+  background-color: #fff;
+  }
+  8% {
+    width: 15px;
+    color: var(--primary);
+  background-color: #fff;
+  }
+  60% {
+    opacity: 0.7;
+    width: 80px;
+    color: var(--primary);
+  background-color: #fff;
+  }
+  100% {
+    opacity: 0;
+    width: 160px;
+    color: var(--primary);
+  background-color: #fff;
+  }
+}
+
+/* States */
+.btn-5 .state {
+  padding-left: 29px;
+  z-index: 2;
+  display: flex;
+  position: relative;
+  color: var(--primary);
+  background-color: #fff;
+}
+.btn-5 .state--default span:nth-child(4) {
+  margin-right: 5px;
+  color: var(--primary);
+  background-color: #fff;
+}
+.btn-5 .state--sent {
+  color: var(--primary);
+  background-color: #fff;
+  display: none;
+}
+.btn-5 .state--sent svg {
+  transform: scale(1.25);
+  margin-right: 8px;
+  color: var(--primary);
+  background-color: #fff;
+}
+.btn-5:focus .state--default {
+  position: absolute;
+  color: var(--primary);
+  background-color: #fff;
+}
+.btn-5:focus .state--sent {
+  display: flex;
+  color: var(--primary);
+  background-color: #fff;
+}
+.btn-5 .state state--default{
+  color: var(--primary);
+  background-color: #fff;
+  
+}
+.btn-5:focus .state--sent span {
+  opacity: 0;
+  animation: slideDown 0.8s ease forwards calc(var(--i) * 0.2s);
+  color: var(--primary);
+  background-color: #fff;
+}
+.btn-5:focus .state--sent .icon svg {
+  opacity: 0;
+  animation: appear 1.2s ease forwards 0.8s;
+  color: var(--primary);
+  background-color: #fff;
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scale(4) rotate(-40deg);
+    color: var(--primary);
+    filter: blur(4px);
+    color: var(--primary);
+  background-color: #fff;
+  }
+  30% {
+    opacity: 1;
+    transform: scale(0.6);
+    filter: blur(1px);
+    color: var(--primary);
+  background-color: #fff;
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+    filter: blur(0);
+    color: var(--primary);
+  background-color: #fff;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    color: var(--primary);
+  background-color: #fff;
+  }
+}
+/* btn-5 */

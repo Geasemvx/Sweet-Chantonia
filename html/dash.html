@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orders Dashboard</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/cart.css">
+  <style>
+    
+    .tabs { margin: 20px 0; }
+    .tab-btn { padding: 10px 20px; margin-right: 10px; cursor: pointer; }
+    .tab-btn.active { background: #088178; color: white; border-radius: 5px; }
+    .tab-pane { display: none; margin-top: 20px;  }
+    .tab-pane.active { display: block; }
+    .order-card { border: 3px solid #088178; padding: 15px; margin-bottom: 15px; border-radius: 8px; background: #f9f9f9; }
+    .order-card p, .order-card span, .order-card h1, .order-card h2, .order-card h3 { background: #f9f9f9; /* text background */ }
+    .order-card button { margin-right: 10px; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer; }
+    .done-btn { background: #28a745; color: white; }
+    .reject-btn { background: #dc3545; color: white; }
+  </style>
+</head>
+<body>
+  <section id="header">
+    <a href="#"><img src="../img/logo.png" class="logo" alt=""></a>
+    <div>
+      <ul id="navbar">
+        <li><a class="active" href="dash.html">Dashboard</a></li>
+        <li><a href="activity.html">Activity</a></li>
+        <li><a href="logout.php">Logout</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <h1 class="cart-title"><br>Orders Dashboard</h1>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab-btn active" onclick="showTab('pending')">Pending</button>
+    <button class="tab-btn" onclick="showTab('done')">Done</button>
+    <button class="tab-btn" onclick="showTab('rejected')">Rejected</button>
+  </div>
+
+  <!-- Tab content -->
+  <div id="pending" class="tab-pane active"></div>
+  <div id="done" class="tab-pane"></div>
+  <div id="rejected" class="tab-pane"></div>
+
+  <script src="../js/dash.js"></script>
+</body>
+</html>

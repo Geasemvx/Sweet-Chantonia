@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../img/logo2.png">
+    <title>Sign-up</title>
+    <link rel="stylesheet" href="../css/stylelogin.css">
+    <script src="../js/script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="box form-box">
+            <header>Sign up</header>
+            <?php if (isset($_GET['error'])): ?>
+            <p style="color:red;"><?php echo $_GET['error']; ?></p>
+            <?php endif; ?>
+            <?php if (isset($_GET['success'])): ?>
+                <p style="color:green;"><?php echo $_GET['success']; ?></p>
+            <?php endif; ?>
+            <form action="processform.php" method="post">
+
+                <!-- name -->
+                <div class="field input">
+                    <label for="name">First name</label>
+                    <input type="text" name="name" id="name" required>
+                </div>
+                <!-- surname -->
+                <div class="field input">
+                    <label for="surname">Last name</label>
+                    <input type="text" name="surname" id="surname" required>
+                </div>
+
+                <!-- Username -->
+                <div class="field input">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" required>
+                </div>
+
+                <!-- Email -->
+                <div class="field input">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" required>
+                </div>
+
+                <!-- Password -->
+                <div class="field input">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" required>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="field input">
+                    <label for="confirm_password">Confirm Password</label>
+                    <input type="password" name="confirm_password" id="confirm_password" required>
+                </div>
+
+                <!-- Submit -->
+                <div class="field">
+                    <input type="submit" name="submit" class="btn" value="Done">
+                </div>
+            </form>
+
+            <div class="links">
+                Already have an account? <a href="../index.html">Login</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

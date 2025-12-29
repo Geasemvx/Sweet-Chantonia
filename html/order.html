@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="../img/logo2.png">
+    <title>Baking Menu</title>
+    <link rel="stylesheet" href="../css/order.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  </head>
+  <body>
+
+    <section id="header">
+        <a href="#"><img src="../img/logo.png" class="logo" alt=""></a>
+        <div>
+          <ul id="navbar">
+            <li><a href="home.html">Home</a></li>
+            <li><a class="active"href="order.html">Shop</a></li>
+            <li><a href="track.html">Track Order</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="logout.php">Logout</a></li>
+            <li id="lg-bag"><a href="cart.html"><i class="fas fa-shopping-bag"></i></a></li>
+            <a href="#" id="close"><i class="fas fa-times"></i></a>
+         </ul>
+        </div>
+        <div id="mobile">
+            <a href="cart.html"><i class="fas fa-shopping-bag"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+
+        </div>
+    </section>
+    <header>
+      <h1 class="main-title"><br>Freshly Baked Delights</h1>
+    </header>
+
+    <div class="container">
+      <div class="image-gallery">
+        <div class="image-card">
+          <img src="../img/Scones.jpeg" alt="Scones" />
+          <h3>Scones</h3>
+        </div>
+        <div class="image-card">
+          <img src="../img/buiscuits.jpeg" alt="Biscuits" />
+          <h3>Biscuits</h3>
+        </div>
+        <div class="image-card">
+          <img src="../img/Cookies.jpeg" alt="Cookies" />
+          <h3>Scones/Buiscuits</h3>
+        </div>
+      </div>
+
+      <div class="menu-display">
+        <h2>Scone Menu</h2>
+        <table>
+          <tr>
+            <th>Type</th>
+            <th>20lt</th>
+            <th>10lt</th>
+            <th>5lt</th>
+            <th>2.5lt</th>
+          </tr>
+          <tr>
+            <td>Plain</td>
+            <td>R750</td>
+            <td>R550</td>
+            <td>R320</td>
+            <td>R170</td>
+          </tr>
+          <tr>
+            <td>Nia's</td>
+            <td>R800</td>
+            <td>R600</td>
+            <td>R350</td>
+            <td>R180</td>
+          </tr>
+          <tr>
+            <td>Custard</td>
+            <td>R900</td>
+            <td>R650</td>
+            <td>R400</td>
+            <td>R220</td>
+          </tr>
+          <tr>
+            <td>Bluberry</td>
+            <td>R900</td>
+            <td>R650</td>
+            <td>R400</td>
+            <td>R220</td>
+          </tr>
+          <tr>
+            <td>Coconut</td>
+            <td>R850</td>
+            <td>R620</td>
+            <td>R380</td>
+            <td>R200</td>
+          </tr>
+        </table>
+
+        <h2>Biscuit Menu</h2>
+        <table>
+          <tr>
+            <th>Type</th>
+            <th>5lt</th>
+            <th>2.5lt</th>
+          </tr>
+          <tr>
+            <td>Eet-sum-more</td>
+            <td>R560</td>
+            <td>R350</td>
+          </tr>
+          <tr>
+            <td>Plain Biscuits</td>
+            <td>R440</td>
+            <td>R280</td>
+          </tr>
+          <tr>
+            <td>Coconut Biscuits</td>
+            <td>R580</td>
+            <td>R380</td>
+          </tr>
+          <tr>
+            <td>Mixed Biscuits</td>
+            <td>R600</td>
+            <td>R400</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- ================= ORDER FORM ================= -->
+      <section style="background-color: #fff;"  class="order-form">
+        <h2 style="background-color: #fff;">Select Item</h2>
+
+        <select style="background-color: #fff;"  id="itemSelect">
+          <!-- ===== SCONES (20 ITEMS) ===== -->
+
+          <!-- Plain -->
+          <option style="background-color: #fff;" value="Plain Scones 2.5lt|170">
+            Plain Scones (2.5lt) - R170
+          </option>
+          <option value="Plain Scones 5lt|320">
+            Plain Scones (5lt) - R320
+          </option>
+          <option style="background-color: #fff;" value="Plain Scones 10lt|550">
+            Plain Scones (10lt) - R550
+          </option>
+          <option value="Plain Scones 20lt|750">
+            Plain Scones (20lt) - R750
+          </option>
+
+          <!-- Nia's -->
+          <option style="background-color: #fff;"  value="Nia's Scones 2.5lt|180">
+            Nia's Scones (2.5lt) - R180
+          </option>
+          <option value="Nia's Scones 5lt|350">
+            Nia's Scones (5lt) - R350
+          </option>
+          <option style="background-color: #fff;" value="Nia's Scones 10lt|600">
+            Nia's Scones (10lt) - R600
+          </option>
+          <option value="Nia's Scones 20lt|800">
+            Nia's Scones (20lt) - R800
+          </option>
+
+          <!-- Custard -->
+          <option style="background-color: #fff;" value="Custard Scones 2.5lt|220">
+            Custard Scones (2.5lt) - R220
+          </option>
+          <option value="Custard Scones 5lt|400">
+            Custard Scones (5lt) - R400
+          </option>
+          <option style="background-color: #fff;"  value="Custard Scones 10lt|650">
+            Custard Scones (10lt) - R650
+          </option>
+          <option value="Custard Scones 20lt|900">
+            Custard Scones (20lt) - R900
+          </option>
+
+          <!-- Blueberry -->
+          <option style="background-color: #fff;" value="Blueberry Scones 2.5lt|220">
+            Blueberry Scones (2.5lt) - R220
+          </option>
+          <option value="Blueberry Scones 5lt|400">
+            Blueberry Scones (5lt) - R400
+          </option>
+          <option style="background-color: #fff;" value="Blueberry Scones 10lt|650">
+            Blueberry Scones (10lt) - R650
+          </option>
+          <option value="Blueberry Scones 20lt|900">
+            Blueberry Scones (20lt) - R900
+          </option>
+
+          <!-- Coconut -->
+          <option style="background-color: #fff;" value="Coconut Scones 2.5lt|200">
+            Coconut Scones (2.5lt) - R200
+          </option>
+          <option value="Coconut Scones 5lt|380">
+            Coconut Scones (5lt) - R380
+          </option>
+          <option style="background-color: #fff;" value="Coconut Scones 10lt|620">
+            Coconut Scones (10lt) - R620
+          </option>
+          <option value="Coconut Scones 20lt|850">
+            Coconut Scones (20lt) - R850
+          </option>
+
+          <!-- ===== BISCUITS (8 ITEMS) ===== -->
+
+          <option style="background-color: #fff;" value="Eet-sum-more 2.5lt|350">
+            Eet-sum-more (2.5lt) - R350
+          </option>
+          <option value="Eet-sum-more 5lt|560">
+            Eet-sum-more (5lt) - R560
+          </option>
+
+          <option style="background-color: #fff;" value="Plain Biscuits 2.5lt|280">
+            Plain Biscuits (2.5lt) - R280
+          </option>
+          <option value="Plain Biscuits 5lt|440">
+            Plain Biscuits (5lt) - R440
+          </option>
+
+          <option style="background-color: #fff;" value="Coconut Biscuits 2.5lt|380">
+            Coconut Biscuits (2.5lt) - R380
+          </option>
+          <option value="Coconut Biscuits 5lt|580">
+            Coconut Biscuits (5lt) - R580
+          </option>
+
+          <option style="background-color: #fff;"  value="Mixed Biscuits 2.5lt|400">
+            Mixed Biscuits (2.5lt) - R400
+          </option>
+          <option value="Mixed Biscuits 5lt|600">
+            Mixed Biscuits (5lt) - R600
+          </option>
+        </select>
+
+        <button id="addBtn">Proceed to Cart</button>
+      </section>
+    </div>
+    <footer class="section-p1">
+        <div class="col">
+            <img src="../img/logo.png" alt="">
+            <h4>Contact</h4>
+            <p><strong>Address: </strong>147 Pallo Jordan Crescent, Mandela Zone D, Namakgale</p>
+            <p><strong>Phone: </strong>078 174 4498</p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f" id="facebook"></i>
+                    <i class="fab fa-tiktok" id="tiktok"></i>
+                    
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <script src="../js/order.js"></script>
+    <script src="../js/script.js"></script>
+  </body>
+</html>

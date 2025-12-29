@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reset Password</title>
+  <link rel="stylesheet" href="../css/stylelogin.css">
+</head>
+<body>
+  <div class="container">
+    <div class="box form-box">
+      <header>Reset Password</header>
+      <form action="reset.php" method="post">
+        <div class="field input">
+          <label for="username">Enter your username</label>
+          <input type="text" name="username" id="username" required>
+        </div>
+        <div class="field input">
+          <label for="newpassword">New Password</label>
+          <input type="password" name="newpassword" id="newpassword" required>
+        </div>
+        <div class="field">
+          <input type="submit" name="reset" class="btn" value="Reset Password">
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

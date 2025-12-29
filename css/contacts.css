@@ -1,0 +1,72 @@
+/* General Page Styling */
+body {
+  background-color: #fbe4e1; /* Your requested background color */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #222; /* Your requested text color */
+  display:inline-flexbox;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.contact-container {
+  width: 90%;
+  max-width: 500px;
+  padding: 60px;
+  
+}
+
+/* Logo Styling */
+.cookie-icon {
+  width: 60px; /* Small size like the image */
+  height: auto;
+  opacity: 0.7;
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 10px 0;
+  font-weight: 700;
+}
+
+.contact-details p {
+  font-size: 1.qrem;
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+/* Row for text and icons side-by-side */
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+}
+
+.icon-teal {
+  color: #088178; /* Your requested logo color */
+  font-size: 1.2rem;
+}
+
+/* Follow Us Section */
+.follow-section h3 {
+  font-size: 1.4rem;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.social-links {
+  display: flex;
+  gap: 20px;
+}
+
+.social-links a {
+  color: #088178; /* Teal color */
+  font-size: 2rem;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.social-links a:hover {
+  transform: scale(1.1); /* Slight pop effect on hover */
+}
