@@ -54,16 +54,3 @@ EXPOSE 10000
 
 # Start Apache in foreground
 CMD ["apache2-foreground"]
-```
-
-## Save this as `Dockerfile` (no extension) in your project root
-
-Your project structure should be:
-```
-your-project/
-├── Dockerfile          ← Save the above code here
-├── composer.json
-├── composer.lock
-├── server.php
-├── index.php (or index.html)
-└── (rest of your files)
