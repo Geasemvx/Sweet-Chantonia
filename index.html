@@ -8,10 +8,13 @@
     <title>Sweet Chantonia - Login</title>
     <!-- Link to external CSS file -->
     <link rel="stylesheet" href="css/stylelogin.css">
+    
 </head>
 <body>
     <div class="container">
+        
         <div class="box form-box">
+             <a href="#"><img src="img/logo2.png" class="logo" alt=""></a>
             <header>Login</header>
             <form action="html/login.php" method="post">
                 <div class="field input ">
@@ -28,11 +31,67 @@
                 <div class="field">
                     <input type="submit" name="submit" class="btn" value="login" required>
                 </div>
-                <div class="resetlink"> <a href="html/reset.html">Forgot Password?</a></div>
+                <div class="links"> <a href="html/reset.html">Forgot Password?</a></div>
                 <div class="links">
                     Dont have an account? <a href="html/register.html">Sign up Now</a>
                 </div>
             </form>
-        </div>      
+        </div>  
+        <style>
+    /* Toast container */
+    .toast {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      min-width: 250px;
+      padding: 15px 20px;
+      border-radius: 8px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      z-index: 9999;
+    }
+
+    .toast.error {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+</style>
+
+<script>
+    // Check for error on page load
+    window.addEventListener('load', () => {
+        const errorMessage = sessionStorage.getItem('loginError');
+        
+        if (errorMessage) {
+            // Clear the error from storage
+            sessionStorage.removeItem('loginError');
+            
+            // Show the toast
+            const toast = document.createElement("div");
+            toast.className = "toast error";
+            toast.textContent = errorMessage;
+            document.body.appendChild(toast);
+
+            // Animate in
+            setTimeout(() => toast.classList.add("show"), 10);
+
+            // Auto remove after 3 seconds
+            setTimeout(() => {
+                toast.classList.remove("show");
+                setTimeout(() => toast.remove(), 400);
+            }, 3000);
+        }
+    });
+</script>    
 </body>
 </html>

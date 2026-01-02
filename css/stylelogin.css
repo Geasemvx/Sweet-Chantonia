@@ -1,83 +1,167 @@
-/*Login Page*/
-@import url(https://fonts.googleapis.com/css?family=Poppins);
- *{
-     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-    background-color: #fff;
-   
-}
-body{
-    background: #e4e9f7;
-}
-.container{
-    display: flex;
-    align-items: center;
-    justify-content:center ;
-    min-height:100vh;
-    background-color: #fbe4e1bd;
-}
-.box{
-    background:#fff;
-    display:flex;
-    flex-direction: column;
-    padding :25px 25px;
-    border-radius:20px;
-    box-shadow:0 0 128px 0 rgba(0,0,0,0.1),0 32px 64px -48px rgba(0,0,0,0.5)
+/* Login Page */
+@import url("https://fonts.googleapis.com/css?family=Poppins");
 
+/* Reset + base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-.form-box{
-    width:450px;
-    margin: 0px 10px;
-    background-color: #fff;
-}
-.form-box header{
-    font-size:25px;
-    font-weight:600;
-    border-bottom:1px solid #faf8f8 ;
-    padding-bottom:10px ;
-    margin-bottom: 10px;
-    background-color: #fff;
-}
-.form-box form .field{
-    display:flex;
-    margin-bottom: 10px;
-    flex-direction:column;
-    background-color: #fff;
-}
-.form-box form .input input{
-    height:40px;
-    width:100%;
-    font-size: 16px;
-    padding:0 10px;
-    border-radius: 5px;
-    border:1px solid #1d1c1c;
-    outline: none;
-    background-color: #fff;
-
-}
-.btn{
-    height:35px;
-    background:#088178;
-    border: 0;
-    border-radius: 5px;
-    color:#fff;
-    font-size:15px ;
-    cursor: pointer;
-    transition:all .3s;
-    margin-top: 10px;
-    padding:0px 10px
+/* Page background */
+body {
+  background: linear-gradient(135deg, #fbe4e1bd, #f8c9c5, #1baca2, #147a73);
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem; /* ensures container isn’t flush with edges */
 }
 
-.btn:hover{
-    opacity:0.82;
+/* Gradient animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
-.submit{
-    width:100%;
+
+/* Container */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
-.link{
-    margin-bottom: 15px;
-    background-color: #fff;
+
+/* Form box */
+.form-box {
+  background: #fff;
+  padding: 1.2rem 1.5rem; /* reduced padding */
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(27, 172, 162, 0.25);
+  width: 100%;
+  max-width: 600px;   /* wider so fields fit without stacking too tall */
+  box-sizing: border-box;
+}
+
+/* Header inside form */
+.form-box header {
+  font-size: 1.3rem;   /* slightly smaller */
+  font-weight: bold;
+  color: #1baca2;
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+
+/* Form layout */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem; /* tighter spacing between fields */
+  width: 100%;
+}
+
+/* Group fields side by side */
+.field-row {
+  display: flex;
+  gap: 0.7rem;
+}
+
+.field-row .field {
+  flex: 1;
+}
+
+/* Labels */
+.field label {
+  margin-bottom: 0.2rem;
+  font-weight: 500;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+/* Inputs */
+.field input {
+  width: 100%;
+  padding: 0.6rem; /* reduced padding */
+  border: 2px solid #fbe4e1bd;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.field input:focus {
+  border-color: #1baca2;
+  box-shadow: 0 0 6px rgba(27, 172, 162, 0.3);
+  outline: none;
+}
+
+/* Submit button */
+.btn {
+  width: 100%;
+  padding: 0.7rem;
+  background: #1baca2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background: #147a73;
+  transform: scale(1.03);
+}
+
+/* Links below form */
+.links {
+  margin-top: 0.8rem;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.links a {
+  color: #f8c9c5;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.links a:hover {
+  text-decoration: underline;
+  color: #1baca2;
+}
+
+/* Success and error messages */
+.success {
+  color: #1baca2;
+  font-weight: bold;
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+}
+
+.error {
+  color: #e57373;
+  font-weight: bold;
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+}
+
+.logo {
+  width: 140px;
+  height: 80px;
+  display: block;
+  margin: 0 auto;
+  background: #fff;
+  transition: all 0.3s ease; /* smooth animation */
+  border-radius: 10px;
+}
+
+.logo:hover {
+  transform: scale(1.2); /* enlarge slightly */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* deep shadow */
+  filter: brightness(1.2); /* make it pop with brightness */
 }

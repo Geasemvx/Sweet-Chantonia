@@ -7,13 +7,18 @@ session_start();
 $username = $_POST['username'] ?? '';
 $password = $_POST['password'] ?? '';
 
-// Function to display error with toast
+// Function to display error with toast overlay
 function showError($message) {
     ?>
     <!DOCTYPE html>
     <html>
     <head>
         <style>
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            
             /* Toast container */
             .toast {
               position: fixed;
@@ -31,17 +36,10 @@ function showError($message) {
               z-index: 9999;
             }
 
-            /* Variants */
             .toast.error {
               background: #f8d7da;
               color: #721c24;
               border: 1px solid #f5c6cb;
-            }
-
-            .toast.success {
-              background: #d4edda;
-              color: #155724;
-              border: 1px solid #c3e6cb;
             }
 
             .toast.show {
@@ -52,27 +50,11 @@ function showError($message) {
     </head>
     <body>
         <script>
-            function showToast(message, type = "error") {
-                const toast = document.createElement("div");
-                toast.className = `toast ${type}`;
-                toast.textContent = message;
-                document.body.appendChild(toast);
-
-                // Animate in
-                setTimeout(() => toast.classList.add("show"), 10);
-
-                // Auto remove and go back after 3 seconds
-                setTimeout(() => {
-                    toast.classList.remove("show");
-                    setTimeout(() => {
-                        toast.remove();
-                        window.history.back();
-                    }, 400);
-                }, 3000);
-            }
-
-            // Show the toast immediately
-            showToast(<?php echo json_encode($message); ?>, "error");
+            // Store error in sessionStorage
+            sessionStorage.setItem('loginError', <?php echo json_encode($message); ?>);
+            
+            // Go back to previous page
+            window.history.back();
         </script>
     </body>
     </html>
@@ -97,9 +79,9 @@ try {
     if (password_verify($password, $user['password'])) { 
         $_SESSION['user'] = $user->getArrayCopy(); 
         echo "<script> 
-        localStorage.setItem('username', '" . $username . "'); 
+        localStorage.setItem('username', '" . addslashes($username) . "'); 
         // redirect after setting localStorage 
-        if ('" . $username . "' === 'Tonia') { 
+        if ('" . addslashes($username) . "' === 'Tonia') { 
             window.location.href = 'dash.html'; } 
         else { 
             window.location.href = 'home.html'; } 
